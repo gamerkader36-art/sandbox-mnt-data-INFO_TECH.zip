@@ -1,0 +1,16 @@
+INFO TECH — version installable (PWA)
+
+Cette version est adaptée aux écrans de téléphone Android, iPhone et ordinateur et contient les fichiers nécessaires pour proposer une installation comme application web (PWA).
+
+Pour l'installer sur un appareil, le site doit d'abord être publié sur une adresse HTTPS publique :
+• Android (Chrome) : ouvrir le site, menu ⋮, puis « Installer l'application » ou « Ajouter à l'écran d'accueil ».
+• iPhone (Safari) : ouvrir le site, bouton Partager, puis « Sur l'écran d'accueil ».
+• Ordinateur (Chrome/Edge) : ouvrir le site, puis utiliser l'icône Installer dans la barre d'adresse ou le menu du navigateur.
+
+Pour un test local :
+1. Décompresser le ZIP.
+2. Ouvrir index.html pour tester la boutique. L'installation PWA et le mode hors ligne ne s'activent pas depuis un fichier local.
+3. Pour l'installation, publier tous les fichiers du dossier sur un hébergement HTTPS. Conserver les dossiers et fichiers ensemble.
+
+WhatsApp du magasin prérempli : +213 660 764 442.
+Les produits restent enregistrés dans le navigateur de l'appareil utilisé. Pour une boutique publique, synchronisée entre appareils et clients, il faudra encore un backend/base de données et un espace d'administration sécurisé.

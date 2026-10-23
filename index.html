@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#05090e">
+<meta name="description" content="INFO TECH — boutique informatique, gaming, composants et accessoires.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>INFO TECH — Boutique informatique</title>
+<style>
+:root{--cyan:#00d9f5;--bg:#05090e;--panel:#0b141e;--line:#12485a;--muted:#a8bdc8;--white:#f4fbff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0,#102331 0,#05090e 50%);color:var(--white);font-family:Arial,Helvetica,sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:8px;padding:10px 14px;background:var(--cyan);color:#001015;font-weight:800}button.secondary{background:#142431;color:#eafaff;border:1px solid #245367}button.danger{background:#5b1c2a;color:#fff;border:1px solid #9b3448}
+header{position:sticky;top:0;z-index:5;background:#03070bea;border-bottom:1px solid var(--cyan);backdrop-filter:blur(12px);display:flex;align-items:center;gap:20px;padding:12px max(4vw,16px);flex-wrap:wrap}
+.logo{font-size:25px;font-weight:1000;font-style:italic;letter-spacing:-1px;border:2px solid var(--cyan);padding:6px 10px;transform:skew(-8deg);white-space:nowrap}.logo span{color:var(--cyan)}nav{display:flex;gap:18px;align-items:center;flex:1}nav a{color:#e5f8ff;text-decoration:none;font-size:14px}nav a:hover{color:var(--cyan)}.search{display:flex;gap:5px;flex:1;min-width:190px}.search input{width:100%}
+input,select,textarea{background:#07111a;color:white;border:1px solid #245367;border-radius:7px;padding:11px;min-width:0}input::placeholder,textarea::placeholder{color:#8ca7b5}
+.hero{margin:18px auto;max-width:1400px;padding:36px 5%;border:1px solid #155166;border-radius:16px;background:linear-gradient(110deg,#07131deF,#06121bc9),radial-gradient(circle at 75% 40%,#007b9d,transparent 40%);display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;min-height:260px}
+.kicker{color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:3px}.hero h1{font-size:clamp(32px,5vw,60px);line-height:.98;margin:12px 0}.hero h1 span{color:var(--cyan)}.hero p{color:#d1e1e9}.hero-art{font-size:100px;text-align:center;filter:drop-shadow(0 0 24px #00d9f577)}
+.features{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.features span{font-size:12px;border:1px solid #245367;border-radius:7px;padding:8px;color:#d4eaf2}
+.wrap{max-width:1400px;margin:auto;padding:10px 4% 30px}.section-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:24px 0 14px}.section-title h2{margin:0;font-size:22px}.section-title h2:before{content:"◆";color:var(--cyan);margin-right:10px}
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.category{border:1px solid #176077;border-radius:10px;padding:16px 10px;background:linear-gradient(145deg,#102432,#070d13);text-align:center;cursor:pointer}.category:hover,.category.active{border-color:var(--cyan);box-shadow:0 0 18px #00d9f522}.category .emoji{font-size:30px}.category b{display:block;margin-top:8px;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.product{background:linear-gradient(145deg,#0c1a25,#050a10);border:1px solid #12485a;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}.product-img{height:160px;display:grid;place-items:center;background:radial-gradient(circle,#12384a,#071018);font-size:64px}.product-img img{width:100%;height:100%;object-fit:contain}.product-body{padding:13px;display:flex;flex-direction:column;gap:8px;flex:1}.tag{font-size:11px;background:#075c39;color:#b7ffe1;border-radius:20px;padding:4px 8px;align-self:flex-start}.product h3{font-size:16px;margin:0}.desc{color:var(--muted);font-size:12px;min-height:30px}.price{font-size:21px;font-weight:900;color:var(--cyan)}.stock{font-size:12px;color:#a8d7e7}.product-actions{display:flex;gap:7px;margin-top:auto}.product-actions button{flex:1;padding:9px 7px;font-size:12px}
+.admin{border:1px solid #236175;background:#07111a;border-radius:12px;padding:18px;margin-top:34px}.admin summary{cursor:pointer;color:var(--cyan);font-size:18px;font-weight:900}.admin-note{font-size:13px;color:#adc4cf;line-height:1.5}.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px}.form-grid textarea{grid-column:1/-1;min-height:70px}.admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.manage-list{display:grid;gap:8px;margin-top:15px}.manage-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px;border:1px solid #1b4050;border-radius:8px}.manage-item small{color:var(--muted)}
+footer{border-top:1px solid #17475a;padding:25px 4%;text-align:center;color:#aac0cb;font-size:12px}footer strong{color:var(--cyan)}
+#cartPanel{position:fixed;right:15px;bottom:15px;z-index:8;width:min(390px,calc(100vw - 30px));background:#07111af5;border:1px solid var(--cyan);box-shadow:0 0 30px #000a;border-radius:14px;padding:16px;max-height:75vh;overflow:auto;display:none}#cartPanel.open{display:block}.cart-line{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid #183746;font-size:13px}.cart-total{font-size:19px;font-weight:900;color:var(--cyan);padding:12px 0}.cart-checkout{display:grid;gap:8px;margin-top:10px}
+.empty{padding:30px;text-align:center;border:1px dashed #245367;border-radius:10px;color:var(--muted);grid-column:1/-1}
+@media(max-width:900px){.categories{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr}.hero-art{display:none}nav{order:3;flex-basis:100%;justify-content:space-between}}
+@media(max-width:520px){header{gap:10px}.logo{font-size:20px}nav{gap:9px;overflow:auto}nav a{white-space:nowrap;font-size:12px}.categories{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr 1fr;gap:8px}.product-img{height:115px;font-size:45px}.product-body{padding:9px}.product h3{font-size:14px}.price{font-size:17px}.product-actions{flex-direction:column}.hero{padding:25px 18px}.form-grid{grid-template-columns:1fr}.manage-item{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><span>INFO</span> TECH</div>
+  <nav><a href="#accueil">Accueil</a><a href="#boutique">Boutique</a><a href="#categories">Catégories</a><a href="#gestion">Gestion produits</a></nav>
+  <div class="search"><input id="search" placeholder="Rechercher un produit..." aria-label="Rechercher"><button onclick="renderProducts()">⌕</button></div>
+  <button onclick="toggleCart()">🛒 Panier <span id="cartCount">0</span></button>
+</header>
+<section class="hero" id="accueil">
+  <div><div class="kicker">PERFORMANCE / QUALITÉ / MEILLEURS PRIX</div><h1>TOUT POUR VOTRE<br><span>SETUP</span></h1><p>PC, composants, périphériques et accessoires gaming.</p><a href="#boutique"><button>Découvrir la boutique →</button></a><div class="features"><span>✓ Produits disponibles</span><span>⚡ Service rapide</span><span>♧ INFO TECH</span></div></div>
+  <div class="hero-art">🖥️ 🎮 💻</div>
+</section>
+<main class="wrap">
+  <div class="section-title" id="categories"><h2>Catégories</h2></div>
+  <div class="categories" id="categoryList"></div>
+  <div class="section-title" id="boutique"><h2>Nos produits</h2><span id="resultCount" class="stock"></span></div>
+  <div class="grid" id="products"></div>
+  <details class="admin" id="gestion">
+    <summary>⚙️ Gérer la boutique — ajouter / modifier / supprimer les produits</summary>
+    <p class="admin-note">Cette version enregistre les produits sur ce navigateur. Pour que les changements apparaissent chez tous les clients et sur plusieurs appareils, il faudra ensuite connecter le site à une base de données et le publier en ligne. Les produits d'exemple sont uniquement des exemples : supprime-les et ajoute ton vrai stock.</p>
+    <div class="form-grid">
+      <input id="pName" placeholder="Nom du produit *">
+      <input id="pPrice" type="number" min="0" placeholder="Prix en DA *">
+      <select id="pCategory"><option>PC Gaming</option><option>Cartes graphiques</option><option>Processeurs</option><option>Écrans</option><option>Claviers & souris</option><option>Accessoires</option><option>Impression</option><option>Réseaux</option><option>Services</option><option>Autres</option></select>
+      <input id="pStock" type="number" min="0" placeholder="Quantité en stock">
+      <input id="pEmoji" placeholder="Icône (ex. 🖱️) ou URL image">
+      <input id="pDesc" placeholder="Description courte">
+    </div>
+    <div class="admin-actions"><button onclick="saveProduct()">＋ Enregistrer le produit</button><button class="secondary" onclick="resetForm()">Vider le formulaire</button><button class="secondary" onclick="exportProducts()">Exporter les produits (JSON)</button><label class="secondary" style="padding:10px;border-radius:8px;cursor:pointer">Importer JSON <input type="file" id="importFile" accept=".json,application/json" style="display:none" onchange="importProducts(event)"></label></div>
+    <div class="manage-list" id="manageList"></div>
+  </details>
+</main>
+<footer><strong>INFO TECH</strong> — Votre partenaire informatique<br>Produits informatiques, gaming et services · Prix en DZD/DA<br><span>Les commandes de cette maquette sont préparées via WhatsApp après configuration du numéro du magasin.</span></footer>
+<aside id="cartPanel">
+  <div class="section-title"><h2>Votre panier</h2><button class="secondary" onclick="toggleCart()">✕</button></div>
+  <div id="cartItems"></div><div class="cart-total" id="cartTotal">Total : 0 DA</div>
+  <div class="cart-checkout"><input id="buyerName" placeholder="Votre nom"><input id="buyerPhone" placeholder="Votre téléphone"><input id="buyerCity" placeholder="Ville / commune"><textarea id="buyerNote" placeholder="Adresse ou remarque (facultatif)"></textarea><input id="shopWhatsapp" value="213660764442" placeholder="WhatsApp du magasin (ex. 2135XXXXXXXX)"><button onclick="sendOrder()">Envoyer la commande par WhatsApp</button><small class="admin-note">Le numéro WhatsApp doit être renseigné pour envoyer la commande. Aucun paiement en ligne n'est activé dans cette première version.</small></div>
+</aside>
+<script>
+const starterProducts=[
+{id:1,name:"Clavier mécanique RGB",price:8900,category:"Claviers & souris",stock:3,visual:"⌨️",desc:"Clavier gaming rétroéclairé",sample:true},
+{id:2,name:"Souris gaming",price:4500,category:"Claviers & souris",stock:5,visual:"🖱️",desc:"Souris gaming précise",sample:true},
+{id:3,name:"Écran gaming 165 Hz",price:32000,category:"Écrans",stock:2,visual:"🖥️",desc:"Écran haute fréquence",sample:true},
+{id:4,name:"Casque gaming",price:6900,category:"Accessoires",stock:4,visual:"🎧",desc:"Casque avec microphone",sample:true}
+];
+let products=loadProducts(),cart={},selectedCategory="Toutes",editingId=null;
+function loadProducts(){try{let x=localStorage.getItem("infotech_products");return x?JSON.parse(x):starterProducts.map(p=>({...p}))}catch(e){return starterProducts.map(p=>({...p}))}}
+function persist(){localStorage.setItem("infotech_products",JSON.stringify(products))}
+function money(n){return Number(n||0).toLocaleString("fr-FR")+" DA"}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function categories(){let cats=["Toutes",...new Set(products.map(p=>p.category))];document.getElementById("categoryList").innerHTML=cats.map((c,i)=>`<div class="category ${selectedCategory===c?'active':''}" onclick="chooseCategory('${esc(c).replace(/'/g,"&#39;")}')"><div class="emoji">${c==="Toutes"?"✦":({"PC Gaming":"🖥️","Cartes graphiques":"🎮","Processeurs":"⚙️","Écrans":"🖥️","Claviers & souris":"⌨️","Accessoires":"🎧","Impression":"🖨️","Réseaux":"📡","Services":"🛠️"}[c]||"💻")}</div><b>${esc(c)}</b></div>`).join("")}
+function chooseCategory(c){selectedCategory=c;categories();renderProducts()}
+function renderProducts(){let q=document.getElementById("search").value.toLowerCase().trim();let arr=products.filter(p=>(selectedCategory==="Toutes"||p.category===selectedCategory)&&(`${p.name} ${p.desc} ${p.category}`).toLowerCase().includes(q));document.getElementById("resultCount").textContent=arr.length+" produit(s)";document.getElementById("products").innerHTML=arr.length?arr.map(p=>`<article class="product"><div class="product-img">${p.visual&&/^https?:\/\//i.test(p.visual)?`<img src="${esc(p.visual)}" alt="${esc(p.name)}" onerror="this.outerHTML='💻'">`:`<span>${esc(p.visual||"💻")}</span>`}</div><div class="product-body"><span class="tag">${p.stock>0?"En stock":"Rupture de stock"}</span><h3>${esc(p.name)}</h3><div class="desc">${esc(p.desc||p.category)}</div><div class="price">${money(p.price)}</div><div class="stock">Quantité : ${Number(p.stock)||0}</div><div class="product-actions"><button ${p.stock<=0?"disabled":""} onclick="addCart(${p.id})">＋ Ajouter au panier</button></div></div></article>`).join(""):'<div class="empty">Aucun produit disponible dans cette catégorie. Ajoute tes produits depuis « Gérer la boutique ».</div>';renderManage()}
+function renderManage(){document.getElementById("manageList").innerHTML=products.map(p=>`<div class="manage-item"><div><b>${esc(p.name)}</b><br><small>${money(p.price)} · Stock : ${p.stock} · ${esc(p.category)} ${p.sample?"· Exemple à remplacer":""}</small></div><div style="display:flex;gap:7px"><button class="secondary" onclick="editProduct(${p.id})">Modifier</button><button class="danger" onclick="deleteProduct(${p.id})">Supprimer</button></div></div>`).join("")||'<div class="empty">Aucun produit. Ajoute ton premier produit ci-dessus.</div>'}
+function saveProduct(){let name=document.getElementById("pName").value.trim(),price=Number(document.getElementById("pPrice").value);if(!name||!Number.isFinite(price)||price<0){alert("Entre au minimum le nom et un prix valide.");return}let item={id:editingId||Date.now(),name,price,category:document.getElementById("pCategory").value,stock:Math.max(0,Number(document.getElementById("pStock").value)||0),visual:document.getElementById("pEmoji").value.trim()||"💻",desc:document.getElementById("pDesc").value.trim(),sample:false};if(editingId){products=products.map(p=>p.id===editingId?item:p)}else products.unshift(item);persist();resetForm();categories();renderProducts()}
+function editProduct(id){let p=products.find(x=>x.id===id);if(!p)return;editingId=id;document.getElementById("pName").value=p.name;document.getElementById("pPrice").value=p.price;document.getElementById("pCategory").value=p.category;document.getElementById("pStock").value=p.stock;document.getElementById("pEmoji").value=p.visual;document.getElementById("pDesc").value=p.desc;document.getElementById("gestion").open=true;document.getElementById("pName").focus()}
+function deleteProduct(id){let p=products.find(x=>x.id===id);if(!p||!confirm("Supprimer « "+p.name+" » ?"))return;products=products.filter(x=>x.id!==id);delete cart[id];persist();categories();renderProducts();renderCart()}
+function resetForm(){editingId=null;["pName","pPrice","pStock","pEmoji","pDesc"].forEach(id=>document.getElementById(id).value="")}
+function addCart(id){let p=products.find(x=>x.id===id);if(!p||p.stock<=0)return;cart[id]=Math.min((cart[id]||0)+1,p.stock);renderCart();document.getElementById("cartPanel").classList.add("open")}
+function changeQty(id,delta){let p=products.find(x=>x.id===id);if(!p)return;cart[id]=Math.min(p.stock,Math.max(0,(cart[id]||0)+delta));if(!cart[id])delete cart[id];renderCart()}
+function renderCart(){let entries=Object.entries(cart).filter(([id,q])=>q>0&&products.some(p=>p.id===Number(id)));let count=entries.reduce((s,[id,q])=>s+q,0),total=entries.reduce((s,[id,q])=>s+products.find(p=>p.id===Number(id)).price*q,0);document.getElementById("cartCount").textContent=count;document.getElementById("cartTotal").textContent="Total : "+money(total);document.getElementById("cartItems").innerHTML=entries.length?entries.map(([id,q])=>{let p=products.find(x=>x.id===Number(id));return `<div class="cart-line"><span>${esc(p.name)}<br>${money(p.price)} × ${q}</span><span><button class="secondary" onclick="changeQty(${id},-1)">−</button> <button class="secondary" onclick="changeQty(${id},1)">+</button></span></div>`}).join(""):'<p class="admin-note">Votre panier est vide.</p>'}
+function toggleCart(){document.getElementById("cartPanel").classList.toggle("open");renderCart()}
+function sendOrder(){let entries=Object.entries(cart).filter(([id,q])=>q>0&&products.some(p=>p.id===Number(id)));if(!entries.length){alert("Ton panier est vide.");return}let name=document.getElementById("buyerName").value.trim(),phone=document.getElementById("buyerPhone").value.trim(),city=document.getElementById("buyerCity").value.trim(),wa=document.getElementById("shopWhatsapp").value.replace(/\D/g,"");if(!name||!phone||!city){alert("Remplis ton nom, téléphone et ville.");return}if(wa.length<8){alert("Renseigne le numéro WhatsApp du magasin dans le champ prévu.");return}let lines=entries.map(([id,q])=>{let p=products.find(x=>x.id===Number(id));return `- ${p.name} x${q} : ${money(p.price*q)}`});let total=entries.reduce((s,[id,q])=>s+products.find(p=>p.id===Number(id)).price*q,0);let msg=`Bonjour INFO TECH, je souhaite commander :\n${lines.join("\n")}\n\nTotal estimé : ${money(total)}\nNom : ${name}\nTéléphone : ${phone}\nVille : ${city}\nRemarque/adresse : ${document.getElementById("buyerNote").value}`;window.open("https://wa.me/"+wa+"?text="+encodeURIComponent(msg),"_blank")}
+function exportProducts(){let blob=new Blob([JSON.stringify(products,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="infotech-produits.json";a.click();URL.revokeObjectURL(a.href)}
+function importProducts(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);if(!Array.isArray(d))throw Error();products=d.map((p,i)=>({...p,id:Number(p.id)||Date.now()+i,name:String(p.name||"Produit"),price:Number(p.price)||0,stock:Number(p.stock)||0,category:String(p.category||"Autres"),visual:String(p.visual||"💻"),desc:String(p.desc||""),sample:false}));persist();categories();renderProducts();alert("Produits importés.")}catch(err){alert("Fichier JSON invalide.")}};r.readAsText(f);e.target.value=""}
+document.getElementById("search").addEventListener("input",renderProducts);categories();renderProducts();renderCart();
+if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js").catch(() => {}));
+}
+</script>
+</body></html>
